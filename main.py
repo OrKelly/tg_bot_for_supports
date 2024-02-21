@@ -1,8 +1,11 @@
+import os
+
 import telebot
+from dotenv import load_dotenv
 
-bot = telebot.TeleBot('7074789076:AAFf8zgZ89vmLm1IgNcg8CAh7yLsqxIU2zs')
+load_dotenv()
+bot = telebot.TeleBot(os.getenv('token'))
 
-from telebot import types
 
 @bot.message_handler(content_types=['text'])
 def test(message):
